@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.AddPartController">
+   <children>
+      <VBox prefHeight="800.0" prefWidth="600.0">
+         <children>
+            <GridPane vgap="20.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.3333740234375" minWidth="10.0" prefWidth="126.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="159.3333740234375" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="113.00002034505212" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="143.66664632161462" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="addPartTitle" text="Add Part">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="addPartIdLbl" text="ID" GridPane.rowIndex="1" />
+                  <Label fx:id="addPartNameLbl" text="Name" GridPane.rowIndex="2" />
+                  <Label fx:id="addPartInvLbl" text="Inventory" GridPane.rowIndex="3" />
+                  <Label fx:id="addPartPriceLbl" text="Price" GridPane.rowIndex="4" />
+                  <Label fx:id="addPartMaxLbl" text="Max" GridPane.rowIndex="5" />
+                  <Label fx:id="sharedLabel" text="Machine ID" GridPane.rowIndex="6" />
+                  <TextField fx:id="addPartIdTxt" editable="false" promptText="Auto-Gen Disabled" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="addPartNameTxt" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="addPartInvTxt" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="addPartPriceTxt" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="addPartMaxTxt" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="addPartSharedTxtField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1">
+                     <children>
+                        <RadioButton fx:id="inHouseRadioBtn" mnemonicParsing="false" onAction="#onInHouseRadio" selected="true" text="In-House">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="addPartToggle" />
+                           </toggleGroup>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+                  <Label fx:id="addPartMinLbl" text="Min" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="addPartMinTxt" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
+                     <children>
+                        <RadioButton fx:id="outsourcedRadioBtn" mnemonicParsing="false" onAction="#onOutsourcedRadio" prefHeight="20.0" prefWidth="108.0" text="Outsourced" toggleGroup="$addPartToggle">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Button fx:id="addPartSaveBtn" mnemonicParsing="false" onAction="#onSave" text="Save" />
+                  <Button fx:id="addPartCancelBtn" mnemonicParsing="false" onAction="#onCancel" text="Cancel" />
+               </children>
+               <padding>
+                  <Insets right="10.0" top="20.0" />
+               </padding>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="20.0" right="40.0" top="40.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
